@@ -417,5 +417,76 @@
     &copy; 2026 Milkyway Center. All Rights Reserved.
 </div>
     </div>
+    <script>
+    if (navigator.modelContext && navigator.modelContext.provideContext) {
+        navigator.modelContext.provideContext({
+            tools: [
+                {
+                    name: "get_v131_validation_summary",
+                    description: "Get the V131 hardware validation summary including all 9 test results, core metrics, and dual-layer cipher architecture details.",
+                    inputSchema: { type: "object", properties: {}, required: [] },
+                    execute: async function() {
+                        return {
+                            project: "NINE-HEADED BIRD (V131-S01)",
+                            status: "Physical Resonance Locked",
+                            coreMetrics: {
+                                encryptionLatency: "1.4 ns",
+                                perfectFrameRate: "99.75%",
+                                falseAccepts: "0/40",
+                                symbolErrorRate: "<1e-3",
+                                syncLockRate: "100%",
+                                rangingPrecision: "28 cm (1 sigma)"
+                            },
+                            validationScoreboard: [
+                                { test: "OOK Physical-Layer Integrity", status: "PASS", metric: "0% BER, 20/20 trials" },
+                                { test: "Stream Cipher over Optical Link", status: "PASS", metric: "0% BER through 30m POF" },
+                                { test: "Encrypted Ranging (ToF)", status: "PASS", metric: "28-30 cm precision" },
+                                { test: "Anti-Spoofing Authentication", status: "PASS", metric: "0 false accepts / 40 attacks" },
+                                { test: "Sub-Clock TDC Hardware", status: "FUNC", metric: "42 ps/tap, 192 taps" },
+                                { test: "Key Switching Latency", status: "PASS", metric: "<66 us, 20/20 instant lock" },
+                                { test: "Maximum Bit Rate", status: "CHAR", metric: "9.6 Mbps safe limit" },
+                                { test: "Long-Run Stability", status: "PASS", metric: "120/120, zero drift" },
+                                { test: "Fiber Coil Robustness", status: "PASS", metric: "60/60, ToF std 1.45 ns" }
+                            ],
+                            result: "9/9 HARDWARE TESTS VALIDATED"
+                        };
+                    }
+                },
+                {
+                    name: "get_v131_licensing_info",
+                    description: "Get V131 protocol licensing categories and contact information.",
+                    inputSchema: { type: "object", properties: {}, required: [] },
+                    execute: async function() {
+                        return {
+                            categories: [
+                                { tier: "Strategic", scope: "Full Infrastructure Integration (Unlimited Nodes)", model: "Institutional License" },
+                                { tier: "Industrial", scope: "SoC Direct Capture Deployment (Per Project)", model: "Commercial License" },
+                                { tier: "Research", scope: "R&D Verification & Model Validation (Annual)", model: "Academic License" }
+                            ],
+                            contact: "yuanjimaster@gmail.com",
+                            organization: "Milkyway Center"
+                        };
+                    }
+                },
+                {
+                    name: "get_v131_anti_spoofing_results",
+                    description: "Get detailed anti-spoofing test results across all attack scenarios.",
+                    inputSchema: { type: "object", properties: {}, required: [] },
+                    execute: async function() {
+                        return {
+                            totalFalseAccepts: "0/40",
+                            attacks: [
+                                { scenario: "Correct key (legitimate)", ber: "0%", falseAccepts: "N/A", result: "Perfect recovery" },
+                                { scenario: "No key (eavesdrop)", ber: "45.5%", falseAccepts: "0/10", result: "Near-random noise" },
+                                { scenario: "Wrong keys (brute-force)", ber: "32%", falseAccepts: "0/20", result: "Guessing fails" },
+                                { scenario: "Known plaintext, no key", ber: "43.6%", falseAccepts: "0/10", result: "Knowledge insufficient" }
+                            ]
+                        };
+                    }
+                }
+            ]
+        });
+    }
+    </script>
 </body>
 </html>

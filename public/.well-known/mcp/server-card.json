@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2025-06-18/server-card.json",
+  "serverInfo": {
+    "name": "milkyway-center-v131",
+    "version": "1.0.0",
+    "title": "Milkyway Center — V131 Topological Photonic Cipher",
+    "description": "Hardware-validated dual-layer photonic cipher: 1.4ns deterministic encryption, 99.75% perfect frame rate, 0/40 anti-spoofing rejection on real 30m fiber. FPGA-native physical-layer security for HFT and critical infrastructure.",
+    "contact": {
+      "email": "yuanjimaster@gmail.com"
+    }
+  },
+  "capabilities": {
+    "resources": true
+  },
+  "resources": [
+    {
+      "uri": "https://milkyway.center/",
+      "name": "V131 Hardware Validation Report",
+      "description": "Full hardware validation report: 9/9 tests passed, dual-layer cipher architecture, anti-spoofing results, HFT infrastructure relevance.",
+      "mimeType": "text/html"
+    },
+    {
+      "uri": "https://milkyway.center/index.md",
+      "name": "V131 Hardware Validation Report (Markdown)",
+      "description": "Machine-readable markdown version of the V131 hardware validation report.",
+      "mimeType": "text/markdown"
+    }
+  ]
+}

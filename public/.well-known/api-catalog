@@ -1,0 +1,33 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://milkyway.center/",
+      "service-doc": [
+        {
+          "href": "https://milkyway.center/",
+          "type": "text/html",
+          "title": "V131 Topological Photonic Cipher — Hardware Validation Report"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://milkyway.center/.well-known/mcp/server-card.json",
+          "type": "application/json",
+          "title": "MCP Server Card"
+        },
+        {
+          "href": "https://milkyway.center/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent Skills Discovery Index"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://milkyway.center/",
+          "type": "text/html",
+          "title": "Site Status"
+        }
+      ]
+    }
+  ]
+}
