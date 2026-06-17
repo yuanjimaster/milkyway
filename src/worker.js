@@ -30,28 +30,22 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === "/" && wantsMarkdown(request)) {
-      const mdUrl = new URL("/index.md", url.origin);
-      const mdResponse = await env.ASSETS.fetch(new Request(mdUrl, request));
-      if (mdResponse.ok) {
-        const headers = new Headers(mdResponse.headers);
-        headers.set("content-type", "text/markdown; charset=utf-8");
-        addLinkHeaders(headers);
-        return new Response(mdResponse.body, {
-          status: mdResponse.status,
-          headers,
-        });
+    if (url.pathname === "/" || url.pathname === "/index.html") {
+      if (wantsMarkdown(request)) {
+        const mdResponse = await env.ASSETS.fetch(new Request(new URL("/index.md", url.origin)));
+        if (mdResponse.ok) {
+          const headers = new Headers(mdResponse.headers);
+          headers.set("content-type", "text/markdown; charset=utf-8");
+          addLinkHeaders(headers);
+          return new Response(mdResponse.body, { status: 200, headers });
+        }
       }
+      const htmlResponse = await env.ASSETS.fetch(new Request(new URL("/index.html", url.origin)));
+      const headers = new Headers(htmlResponse.headers);
+      headers.set("content-type", "text/html; charset=utf-8");
+      return new Response(htmlResponse.body, { status: 200, headers });
     }
 
-    const response = await env.ASSETS.fetch(request);
-    const newHeaders = new Headers(response.headers);
-    addLinkHeaders(newHeaders);
-
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: newHeaders,
-    });
+    return env.ASSETS.fetch(request);
   },
 };
