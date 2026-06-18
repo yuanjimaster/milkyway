@@ -14,13 +14,13 @@
   },
   "resources": [
     {
-      "uri": "https://milkyway.center/",
+      "uri": "https://www.milkyway.center/",
       "name": "V131 Hardware Validation Report",
       "description": "Full hardware validation report: 9/9 tests passed, dual-layer cipher architecture, anti-spoofing results, HFT infrastructure relevance.",
       "mimeType": "text/html"
     },
     {
-      "uri": "https://milkyway.center/index.md",
+      "uri": "https://www.milkyway.center/index.md",
       "name": "V131 Hardware Validation Report (Markdown)",
       "description": "Machine-readable markdown version of the V131 hardware validation report.",
       "mimeType": "text/markdown"

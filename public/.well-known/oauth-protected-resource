@@ -1,0 +1,10 @@
+{
+  "resource": "https://www.milkyway.center",
+  "authorization_servers": ["https://www.milkyway.center"],
+  "scopes_supported": ["public"],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://www.milkyway.center/auth.md",
+  "resource_policy_uri": "https://www.milkyway.center/auth.md",
+  "resource_signing_alg_values_supported": [],
+  "description": "All resources on this site are publicly accessible. No authentication tokens are required."
+}

@@ -5,21 +5,21 @@
       "name": "v131-hardware-validation",
       "type": "resource",
       "description": "V131 topological photonic cipher hardware validation report: 9/9 tests passed including OOK integrity, stream cipher, encrypted ranging, anti-spoofing, sub-clock TDC, key switching, max bit rate, long-run stability, and fiber coil robustness.",
-      "url": "https://milkyway.center/",
+      "url": "https://www.milkyway.center/",
       "sha256": ""
     },
     {
       "name": "v131-markdown-report",
       "type": "resource",
       "description": "Machine-readable markdown version of the V131 hardware validation report, available via Accept: text/markdown content negotiation.",
-      "url": "https://milkyway.center/index.md",
+      "url": "https://www.milkyway.center/index.md",
       "sha256": ""
     },
     {
       "name": "api-catalog",
       "type": "discovery",
       "description": "RFC 9727 API catalog listing available resources and their descriptions for the Milkyway Center site.",
-      "url": "https://milkyway.center/.well-known/api-catalog",
+      "url": "https://www.milkyway.center/.well-known/api-catalog",
       "sha256": ""
     }
   ]
