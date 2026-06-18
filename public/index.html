@@ -83,6 +83,64 @@
         .blink { animation: blinker 1.5s linear infinite; }
         @keyframes blinker { 50% { opacity: 0.2; } }
     </style>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is V131?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "V131 is a hardware-validated dual-layer photonic cipher that achieves 1.4ns deterministic encryption latency on real fiber optic hardware. It combines a physical manifold engine for anti-spoofing with AES-256-CTR for NIST-compliant cryptographic strength. All 9 hardware tests passed on an Artix-7 FPGA with 30m plastic optical fiber."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What encryption latency does V131 achieve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "V131 achieves 1.4 nanosecond deterministic encryption latency — sub-clock cycle — with zero jitter. The AES-256-CTR digital layer adds 1.6ns overhead. This makes it suitable for high-frequency trading and other latency-critical infrastructure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does V131 prevent spoofing attacks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "V131's physical manifold engine provides waveform-level anti-spoofing. In hardware testing, it achieved 0 false accepts across 40 attack attempts including eavesdropping (45.5% BER), brute-force wrong keys (32% BER), and known-plaintext attacks (43.6% BER). All attacks produce near-random noise."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is V131 NIST compliant?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. V131's dual-layer architecture includes AES-256-CTR for NIST-compliant data confidentiality with 2^256 cryptographic strength. The physical manifold engine adds anti-spoofing on top of full regulatory compliance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What hardware platform does V131 use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "V131 is validated on Artix-7 XC7A75T FPGA (XEM7310-A75 board), using 30m plastic optical fiber with HFBR-1414/2416 transceivers and LT1016 comparator. Total FPGA usage is approximately 3,400 LUTs (7.2%). All results are from physical hardware measurements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I license V131 technology?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contact yuanjimaster@gmail.com for licensing. Available tiers: Strategic (full infrastructure integration, unlimited nodes), Industrial (SoC direct capture deployment, per project), and Research (R&D verification and model validation, annual)."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">

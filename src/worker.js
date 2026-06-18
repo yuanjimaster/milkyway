@@ -3,6 +3,7 @@ const LINK_HEADERS = [
   '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"',
   '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
   '</auth.md>; rel="auth-doc"',
+  '</llms.txt>; rel="llms-txt"',
   '</.well-known/oauth-protected-resource>; rel="oauth-protected-resource"',
   '</.well-known/oauth-authorization-server>; rel="oauth-authorization-server"',
 ];

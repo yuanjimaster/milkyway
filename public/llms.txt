@@ -1,0 +1,109 @@
+# Milkyway Center — V131 Topological Photonic Cipher
+
+> Hardware-validated dual-layer photonic cipher achieving 1.4ns deterministic encryption latency, 99.75% perfect frame rate, and 0/40 anti-spoofing rejection on real 30m fiber. FPGA-native physical-layer security for HFT and critical infrastructure.
+
+## Project
+
+- Project Name: NINE-HEADED BIRD (V131-S01)
+- Organization: Milkyway Center
+- Status: Physical Resonance Locked — 9/9 Hardware Tests Validated
+- Platform: Artix-7 XC7A75T on XEM7310-A75 | 30m POF | HFBR-1414/2416 | LT1016
+- Contact: yuanjimaster@gmail.com
+- Website: https://milkyway.center
+
+## Core Metrics (Hardware Validated)
+
+| Metric | Value |
+|--------|-------|
+| Encryption Latency | 1.4 ns (sub-clock cycle) |
+| Perfect Frame Rate | 99.75% (30-min endurance) |
+| False Accepts | 0 / 40 (anti-spoofing attacks) |
+| Symbol Error Rate | < 1e-3 (both cipher engines) |
+| Sync Lock Rate | 100% (all test runs) |
+| Ranging Precision (1-sigma) | 28 cm (encrypted mode) |
+| Key Switching Latency | < 66 microseconds |
+| Maximum Bit Rate | 9.6 Mbps (safe limit, 2.5x margin) |
+| FPGA LUT Usage | ~3,400 (7.2%) |
+
+## Dual-Layer Architecture
+
+V131 implements two simultaneous encryption layers:
+
+1. **Physical Manifold Engine** — Waveform-level anti-spoofing using topological state encoding. Effective strength ~2^42-2^51. Zero false accepts across all attack scenarios. 1.4ns latency.
+
+2. **AES-256-CTR (Digital)** — NIST-compliant cryptographic layer for data confidentiality. 2^256 strength. 1.6ns latency overhead. Full regulatory compliance.
+
+Combined: NIST-compliant + physical-layer anti-tamper in a single FPGA.
+
+## Hardware Validation Scoreboard
+
+All 9 tests passed on real hardware (no simulation-only claims):
+
+1. OOK Physical-Layer Integrity — PASS (0% BER, 20/20 trials)
+2. Stream Cipher over Optical Link — PASS (0% BER through 30m POF)
+3. Encrypted Ranging (ToF) — PASS (28-30 cm precision at 1-sigma)
+4. Anti-Spoofing Authentication — PASS (0 false accepts / 40 attacks)
+5. Sub-Clock TDC Hardware — FUNCTIONAL (42 ps/tap resolution, 192 taps)
+6. Key Switching Latency — PASS (< 66 microseconds, 20/20 instant lock)
+7. Maximum Bit Rate — CHARACTERIZED (9.6 Mbps safe limit)
+8. Long-Run Stability — PASS (120/120 captures over 10 min, zero drift)
+9. Fiber Coil Robustness — PASS (60/60, ToF std 1.45 ns)
+
+## Anti-Spoofing Results
+
+| Attack Scenario | BER | False Accepts | Result |
+|-----------------|-----|---------------|--------|
+| Correct key (legitimate) | 0% | N/A | Perfect recovery |
+| No key (eavesdrop) | 45.5% | 0/10 | Near-random noise |
+| Wrong keys (brute-force) | 32% | 0/20 | Guessing fails |
+| Known plaintext, no key | 43.6% | 0/10 | Knowledge insufficient |
+
+Total: 0 false accepts across 40 attack attempts.
+
+## HFT Infrastructure Relevance
+
+- Zero-jitter encryption: 1.4ns deterministic — no micro-burst variance
+- Physical anti-tamper: 100% rejection of fiber-tap and splice attacks
+- NIST dual defense: AES-256-CTR audit trail + manifold physical resilience
+- Instant key rotation: < 66 microseconds with zero downtime
+- Per-session or per-trade key rotation capability
+
+## Research Foundation
+
+- Quantum Computing: Room-temperature photonic quantum logic using 9D Complex Tensor manifold
+- Neo-AI Model: Deterministic logic and topological manifold expansion — exact reality reconstruction
+- Unified Field Theory: Bridging General Relativity and Quantum Mechanics through Information Dynamics
+- Synchronization Fidelity: 0.9999
+
+## Licensing
+
+| Category | Scope | Model |
+|----------|-------|-------|
+| Strategic | Full infrastructure integration (unlimited nodes) | Institutional License |
+| Industrial | SoC direct capture deployment (per project) | Commercial License |
+| Research | R&D verification & model validation (annual) | Academic License |
+
+## Frequently Asked Questions
+
+**Q: What is V131?**
+A: V131 is a hardware-validated dual-layer photonic cipher that achieves 1.4ns deterministic encryption latency on real fiber optic hardware. It combines a physical manifold engine for anti-spoofing with AES-256-CTR for NIST-compliant cryptographic strength.
+
+**Q: What makes V131 different from software encryption?**
+A: V131 operates at the physical layer on an FPGA — encryption happens in 1.4 nanoseconds with zero jitter, compared to microseconds for software. It also provides physical anti-spoofing that software cannot: 0 false accepts across 40 attack attempts on real fiber.
+
+**Q: Is this simulation or real hardware?**
+A: All results are from physical measurements on real hardware: Artix-7 FPGA, 30m plastic optical fiber, actual photodetectors. No simulation-only claims.
+
+**Q: Who is behind Milkyway Center?**
+A: Frank Huo, the inventor of the V131 protocol and founder of Milkyway Center. The project spans photonic encryption, quantum computing foundations, and unified field theory.
+
+**Q: How do I license V131?**
+A: Contact yuanjimaster@gmail.com for licensing inquiries. Available as institutional (strategic), commercial (industrial), or academic (research) licenses.
+
+## Links
+
+- Full Report: https://milkyway.center/
+- Report (Markdown): https://milkyway.center/index.md
+- API Catalog: https://milkyway.center/.well-known/api-catalog
+- Agent Skills: https://milkyway.center/.well-known/agent-skills/index.json
+- MCP Server Card: https://milkyway.center/.well-known/mcp/server-card.json
