@@ -57,7 +57,7 @@ export default {
       return new Response(`User-agent: *
 Allow: /
 Allow: /.well-known/
-Sitemap: https://milkyway.center/sitemap.xml
+Sitemap: https://www.milkyway.center/sitemap.xml
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: GPTBot
