@@ -1,0 +1,43 @@
+{
+  "name": "Milkyway Center — V131 Topological Photonic Cipher",
+  "description": "Hardware-validated dual-layer photonic cipher achieving 1.4ns deterministic encryption latency, 99.75% perfect frame rate, and 0/40 anti-spoofing rejection. FPGA-native physical-layer security for HFT and critical infrastructure.",
+  "url": "https://www.milkyway.center",
+  "provider": {
+    "organization": "Milkyway Center",
+    "url": "https://www.milkyway.center"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "authentication": {
+    "schemes": ["anonymous"],
+    "credentials": null
+  },
+  "supportedInterfaces": [
+    {
+      "protocol": "https",
+      "url": "https://www.milkyway.center/",
+      "contentTypes": ["text/html", "text/markdown"]
+    }
+  ],
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["text/html", "text/markdown"],
+  "skills": [
+    {
+      "id": "hardware-validation",
+      "name": "V131 Hardware Validation Report",
+      "description": "Full hardware validation results: 9/9 tests passed, dual-layer cipher architecture, anti-spoofing results, core metrics",
+      "tags": ["V131", "FPGA", "encryption", "hardware", "validation"],
+      "examples": ["What is V131?", "What encryption latency does V131 achieve?", "How does anti-spoofing work?"]
+    },
+    {
+      "id": "licensing",
+      "name": "Protocol Licensing",
+      "description": "Licensing information for V131 technology: strategic, industrial, and research tiers",
+      "tags": ["licensing", "commercial", "academic"],
+      "examples": ["How do I license V131?", "What licensing tiers are available?"]
+    }
+  ]
+}

@@ -25,6 +25,10 @@
   Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
 
+/.well-known/agent-card.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
 /llms.txt
   Content-Type: text/plain; charset=utf-8
   Access-Control-Allow-Origin: *
