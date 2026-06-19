@@ -2,7 +2,7 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  WWW-Authenticate: Bearer resource_metadata="https://www.milkyway.center/.well-known/oauth-protected-resource"
+  WWW-Authenticate: Bearer resource_metadata="https://milkyway.center/.well-known/oauth-protected-resource"
   Link: </.well-known/api-catalog>; rel="api-catalog", </.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json", </auth.md>; rel="auth-doc", </.well-known/oauth-protected-resource>; rel="oauth-protected-resource", </.well-known/oauth-authorization-server>; rel="oauth-authorization-server"
 
 /.well-known/api-catalog

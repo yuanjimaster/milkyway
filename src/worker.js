@@ -1,3 +1,39 @@
+const OAUTH_PROTECTED_RESOURCE = JSON.stringify({
+  resource: "https://milkyway.center",
+  authorization_servers: ["https://milkyway.center"],
+  scopes_supported: ["public"],
+  bearer_methods_supported: ["header"],
+  resource_documentation: "https://milkyway.center/auth.md",
+  resource_policy_uri: "https://milkyway.center/auth.md",
+  resource_signing_alg_values_supported: [],
+  description: "All resources on this site are publicly accessible. No authentication tokens are required.",
+});
+
+const OAUTH_AUTHORIZATION_SERVER = JSON.stringify({
+  issuer: "https://milkyway.center",
+  service_documentation: "https://milkyway.center/auth.md",
+  op_policy_uri: "https://milkyway.center/auth.md",
+  response_types_supported: [],
+  grant_types_supported: [],
+  scopes_supported: ["public"],
+  agent_auth: {
+    skill: "https://milkyway.center/auth.md",
+    register_uri: "https://milkyway.center/agent/register",
+    claim_uri: "https://milkyway.center/agent/register",
+    identity_types_supported: ["anonymous"],
+    anonymous: {
+      credential_types_supported: ["bearer"],
+      claim_uri: "https://milkyway.center/agent/register",
+    },
+  },
+});
+
+const WELL_KNOWN_JSON = {
+  "/.well-known/oauth-protected-resource": OAUTH_PROTECTED_RESOURCE,
+  "/.well-known/oauth-authorization-server": OAUTH_AUTHORIZATION_SERVER,
+  "/.well-known/openid-configuration": OAUTH_AUTHORIZATION_SERVER,
+};
+
 const LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
   '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"',
@@ -8,12 +44,6 @@ const LINK_HEADERS = [
   '</.well-known/oauth-authorization-server>; rel="oauth-authorization-server"',
 ];
 
-const WELL_KNOWN_JSON = [
-  "/.well-known/oauth-authorization-server",
-  "/.well-known/oauth-protected-resource",
-  "/.well-known/openid-configuration",
-];
-
 function addLinkHeaders(headers) {
   for (const link of LINK_HEADERS) {
     headers.append("Link", link);
@@ -21,7 +51,7 @@ function addLinkHeaders(headers) {
 }
 
 function addSecurityHeaders(headers) {
-  headers.set("WWW-Authenticate", 'Bearer resource_metadata="https://www.milkyway.center/.well-known/oauth-protected-resource"');
+  headers.set("WWW-Authenticate", 'Bearer resource_metadata="https://milkyway.center/.well-known/oauth-protected-resource"');
 }
 
 function wantsMarkdown(request) {
@@ -57,7 +87,7 @@ export default {
       return new Response(`User-agent: *
 Allow: /
 Allow: /.well-known/
-Sitemap: https://www.milkyway.center/sitemap.xml
+Sitemap: https://milkyway.center/sitemap.xml
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: GPTBot
@@ -114,7 +144,7 @@ Allow: /
 
     if (url.pathname === "/agent/register" && request.method === "GET") {
       return new Response(JSON.stringify({
-        registration_endpoint: "https://www.milkyway.center/agent/register",
+        registration_endpoint: "https://milkyway.center/agent/register",
         method: "POST",
         identity_types_supported: ["anonymous"],
         credential_types_supported: ["public"],
@@ -155,13 +185,14 @@ Allow: /
       return new Response(response.body, { status: response.status, headers });
     }
 
-    if (WELL_KNOWN_JSON.includes(url.pathname)) {
-      const response = await env.ASSETS.fetch(request);
-      const headers = new Headers(response.headers);
-      headers.set("content-type", "application/json");
+    if (WELL_KNOWN_JSON[url.pathname]) {
+      const headers = new Headers();
+      headers.set("content-type", "application/json; charset=utf-8");
+      headers.set("cache-control", "public, max-age=3600");
       headers.set("Access-Control-Allow-Origin", "*");
+      addLinkHeaders(headers);
       addSecurityHeaders(headers);
-      return new Response(response.body, { status: response.status, headers });
+      return new Response(WELL_KNOWN_JSON[url.pathname], { status: 200, headers });
     }
 
     if (url.pathname === "/auth.md") {
@@ -175,6 +206,7 @@ Allow: /
 
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
+    addLinkHeaders(headers);
     addSecurityHeaders(headers);
     return new Response(response.body, { status: response.status, headers });
   },

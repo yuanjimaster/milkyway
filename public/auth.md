@@ -29,9 +29,9 @@ All resources are freely accessible without registration or credentials:
 
 ```yaml
 agent_auth:
-  skill: https://www.milkyway.center/auth.md
-  register_uri: https://www.milkyway.center/agent/register
-  claim_uri: https://www.milkyway.center/agent/register
+  skill: https://milkyway.center/auth.md
+  register_uri: https://milkyway.center/agent/register
+  claim_uri: https://milkyway.center/agent/register
   identity_types_supported:
     - anonymous
   anonymous:
