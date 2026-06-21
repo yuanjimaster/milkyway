@@ -236,46 +236,86 @@
         .metrics-grid { grid-template-columns: 1fr 1fr 1fr; }
         .metric-value { font-size: 32px; font-weight: bold; }
 
-        /* iPhone / mobile responsive */
+        /* ===== Mobile / iPhone ===== */
         @media (max-width: 768px) {
-            body { font-size: 17px; line-height: 1.9; }
-            .container { padding: 18px; margin: 0 auto; border-left: none; border-right: none; }
-            h1 { font-size: 22px; letter-spacing: 0.5px; }
-            h2 { font-size: 20px; padding-left: 10px; margin-top: 28px; }
-            h3 { font-size: 19px; }
-            p, span, div, td, th, li, strong, em, a { font-size: 16px !important; line-height: 1.9 !important; }
-            .data-grid { grid-template-columns: 1fr; gap: 12px; }
-            .item { padding: 16px; }
-            .tp-card { padding: 16px; }
-            .tp-card h3 { font-size: 19px !important; }
-            .tp-spec-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .tp-spec-table th { font-size: 15px !important; padding: 10px; }
-            .tp-spec-table td { font-size: 15px !important; padding: 10px; }
-            .tp-pipeline { grid-template-columns: 1fr; gap: 10px; }
-            .tp-arch-block { min-width: auto; width: 100%; }
-            .tp-arch-arrow { transform: rotate(90deg); }
-            .tp-badge { font-size: 15px !important; padding: 8px 14px; }
-            .metrics-grid { grid-template-columns: 1fr 1fr 1fr; }
-            .metric-value { font-size: 26px !important; }
-            .status { font-size: 15px !important; }
-            .footer { font-size: 15px !important; }
-            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            table th, table td { padding: 10px !important; font-size: 15px !important; white-space: nowrap; }
-            .highlight { font-size: 16px !important; }
+            /* Base: readable body text with proper hierarchy */
+            body { font-size: 16px; line-height: 1.75; background-image: none; }
+
+            /* Layout: centered, clean edges */
+            .container { padding: 24px 20px; margin: 0 auto; border: none; box-shadow: none; }
+
+            /* Type scale — hierarchy matters */
+            h1 { font-size: 24px; letter-spacing: 0.5px; line-height: 1.3; }
+            h2 { font-size: 20px; padding-left: 12px; margin-top: 32px; margin-bottom: 14px; }
+            h3 { font-size: 17px; }
+
+            /* Body text: anything with inline font-size < 16px */
+            p[style*="font-size"] { font-size: 15px !important; line-height: 1.75 !important; }
+            span[style*="font-size: 10"] { font-size: 14px !important; }
+            span[style*="font-size: 11"] { font-size: 14px !important; }
+            span[style*="font-size: 12"] { font-size: 15px !important; }
+            span[style*="font-size: 13"] { font-size: 15px !important; }
+            p[style*="font-size: 10"] { font-size: 14px !important; }
+            p[style*="font-size: 11"] { font-size: 14px !important; }
+            p[style*="font-size: 12"] { font-size: 15px !important; }
+            p[style*="font-size: 13"] { font-size: 15px !important; }
+            div[style*="font-size: 12"] { font-size: 15px !important; }
             sup { font-size: 11px !important; line-height: 0 !important; }
+
+            /* Grids → single column */
+            .data-grid { grid-template-columns: 1fr; gap: 16px; }
+            .metrics-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+            .metric-value { font-size: 26px !important; }
+
+            /* Cards & items: solid borders, more breathing room */
+            .item { padding: 18px; font-size: 15px; line-height: 1.75; border-style: solid; border-color: #1a3a1a; }
+            .tp-card { padding: 18px; border-style: solid; border-color: #1a3a1a; }
+            .tp-card h3 { font-size: 18px !important; margin-bottom: 14px !important; }
+            .tp-card p { font-size: 15px !important; line-height: 1.75 !important; }
+            .tp-app { font-size: 15px !important; padding: 18px; line-height: 1.75; border-style: solid; }
+            .tp-app p { font-size: 15px !important; }
+
+            /* Tables: readable, horizontal scroll only when needed */
+            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .tp-spec-table th { font-size: 14px !important; padding: 10px !important; }
+            .tp-spec-table td { font-size: 14px !important; padding: 10px !important; white-space: normal !important; }
+            table th { font-size: 14px !important; padding: 10px !important; }
+            table td { font-size: 14px !important; padding: 10px !important; }
+
+            /* Pipeline & architecture */
+            .tp-pipeline { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .tp-step { font-size: 14px; padding: 14px; }
+            .tp-arch { flex-direction: column; gap: 8px; }
+            .tp-arch-block { min-width: auto; width: 100%; font-size: 14px; }
+            .tp-arch-arrow { transform: rotate(90deg); font-size: 20px; }
+            .tp-apps { grid-template-columns: 1fr; }
+
+            /* Badges & status */
+            .tp-badge { font-size: 14px !important; padding: 6px 14px; }
+            .status { font-size: 13px !important; padding: 4px 10px; }
+            .highlight { font-size: 15px !important; }
+
+            /* Footer */
+            .footer { font-size: 14px !important; line-height: 1.8; }
+
+            /* Nav: horizontal scroll, no wrap mess */
+            .nav-inner { padding: 10px 16px; flex-wrap: nowrap; gap: 12px; }
+            .nav-brand { font-size: 16px; letter-spacing: 2px; margin-right: 12px; flex-shrink: 0; }
+            .nav-links { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 6px; padding-bottom: 2px; }
+            .nav-links a { font-size: 11px; padding: 6px 10px; flex-shrink: 0; }
+
+            /* Kill blink on mobile — distracting on small screen */
+            .blink { animation: none; }
         }
+
         @media (max-width: 480px) {
-            .metrics-grid { grid-template-columns: 1fr; gap: 10px; }
-            .metric-value { font-size: 30px !important; }
-        }
-        @media (max-width: 420px) {
-            .container { padding: 14px; }
-            h1 { font-size: 20px; }
+            .container { padding: 18px 16px; }
+            h1 { font-size: 21px; }
             h2 { font-size: 18px; }
-            .nav-inner { padding: 8px 12px; }
-            .nav-brand { font-size: 16px; letter-spacing: 2px; }
-            .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 4px; }
-            .nav-links a { font-size: 13px !important; padding: 6px 10px; flex-shrink: 0; }
+            .metrics-grid { grid-template-columns: 1fr; gap: 14px; }
+            .metric-value { font-size: 32px !important; }
+            .tp-pipeline { grid-template-columns: 1fr; }
+            .nav-brand { font-size: 15px; }
         }
     </style>
 
