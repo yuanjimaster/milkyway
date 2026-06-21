@@ -302,78 +302,64 @@
 
         /* ===== Mobile / iPhone ===== */
         @media (max-width: 768px) {
-            /* Base: readable body text with proper hierarchy */
-            body { font-size: 16px; line-height: 1.75; background-image: none; }
-
-            /* Layout: centered, clean edges */
+            body { font-size: 16px; line-height: 1.8; background-image: none; }
             .container { padding: 24px 20px; margin: 0 auto; border: none; box-shadow: none; }
 
-            /* Type scale — hierarchy matters */
+            /* Type scale */
             h1 { font-size: 24px; letter-spacing: 0.5px; line-height: 1.3; }
             h2 { font-size: 20px; padding-left: 12px; margin-top: 32px; margin-bottom: 14px; }
-            h3 { font-size: 17px; }
+            h3 { font-size: 18px; }
 
-            /* Body text: anything with inline font-size < 16px */
-            p[style*="font-size"] { font-size: 15px !important; line-height: 1.75 !important; }
-            span[style*="font-size: 10"] { font-size: 14px !important; }
-            span[style*="font-size: 11"] { font-size: 14px !important; }
-            span[style*="font-size: 12"] { font-size: 15px !important; }
-            span[style*="font-size: 13"] { font-size: 15px !important; }
-            p[style*="font-size: 10"] { font-size: 14px !important; }
-            p[style*="font-size: 11"] { font-size: 14px !important; }
-            p[style*="font-size: 12"] { font-size: 15px !important; }
-            p[style*="font-size: 13"] { font-size: 15px !important; }
-            div[style*="font-size: 12"] { font-size: 15px !important; }
-            sup { font-size: 11px !important; line-height: 0 !important; }
+            /*
+             * Floor all text inside .container to 14px.
+             * The [style] qualifier raises specificity above bare inline styles.
+             */
+            .container p,
+            .container span,
+            .container div,
+            .container td,
+            .container th,
+            .container li,
+            .container a { font-size: 15px !important; line-height: 1.8 !important; }
+            .container h1 { font-size: 24px !important; line-height: 1.3 !important; }
+            .container h2 { font-size: 20px !important; line-height: 1.4 !important; }
+            .container h3 { font-size: 18px !important; line-height: 1.4 !important; }
+            .container sup { font-size: 10px !important; line-height: 0 !important; }
+            .container .metric-value { font-size: 28px !important; line-height: 1.2 !important; }
+            .container .tp-badge { font-size: 14px !important; line-height: 1.4 !important; padding: 6px 14px; }
+            .container .status { font-size: 14px !important; line-height: 1.4 !important; padding: 4px 10px; }
 
             /* Grids → single column */
             .data-grid { grid-template-columns: 1fr; gap: 16px; }
             .metrics-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-            .metric-value { font-size: 26px !important; }
 
-            /* Cards & items: solid borders, more breathing room */
-            .item { padding: 18px; font-size: 15px; line-height: 1.75; border-style: solid; border-color: #1a3a1a; }
+            /* Cards & items */
+            .item { padding: 18px; border-style: solid; border-color: #1a3a1a; }
             .tp-card { padding: 18px; border-style: solid; border-color: #1a3a1a; }
-            .tp-card h3 { font-size: 18px !important; margin-bottom: 14px !important; }
-            .tp-card p { font-size: 15px !important; line-height: 1.75 !important; }
-            .tp-app { font-size: 15px !important; padding: 18px; line-height: 1.75; border-style: solid; }
-            .tp-app p { font-size: 15px !important; }
+            .tp-app { padding: 18px; border-style: solid; }
 
-            /* Tables: readable, horizontal scroll only when needed */
+            /* Tables */
             table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .tp-spec-table th { font-size: 14px !important; padding: 10px !important; }
-            .tp-spec-table td { font-size: 14px !important; padding: 10px !important; white-space: normal !important; }
-            table th { font-size: 14px !important; padding: 10px !important; }
-            table td { font-size: 14px !important; padding: 10px !important; }
 
             /* Pipeline & architecture */
             .tp-pipeline { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .tp-step { font-size: 14px; padding: 14px; }
             .tp-arch { flex-direction: column; gap: 8px; }
-            .tp-arch-block { min-width: auto; width: 100%; font-size: 14px; }
-            .tp-arch-arrow { transform: rotate(90deg); font-size: 20px; }
+            .tp-arch-block { min-width: auto; width: 100%; }
+            .tp-arch-arrow { transform: rotate(90deg); font-size: 20px !important; }
             .tp-apps { grid-template-columns: 1fr; }
 
-            /* Badges & status */
-            .tp-badge { font-size: 14px !important; padding: 6px 14px; }
-            .status { font-size: 13px !important; padding: 4px 10px; }
-            .highlight { font-size: 15px !important; }
-
             /* Footer */
-            .footer { font-size: 14px !important; line-height: 1.8; }
+            .footer { font-size: 14px !important; line-height: 1.8 !important; }
 
-            /* Nav handled by hamburger at 700px */
-
-            /* Kill blink on mobile — distracting on small screen */
             .blink { animation: none; }
         }
 
         @media (max-width: 480px) {
             .container { padding: 18px 16px; }
-            h1 { font-size: 21px; }
-            h2 { font-size: 18px; }
+            .container h1 { font-size: 21px !important; }
+            .container h2 { font-size: 18px !important; }
             .metrics-grid { grid-template-columns: 1fr; gap: 14px; }
-            .metric-value { font-size: 32px !important; }
+            .container .metric-value { font-size: 32px !important; }
             .tp-pipeline { grid-template-columns: 1fr; }
         }
     </style>
