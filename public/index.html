@@ -190,11 +190,75 @@
             color: #fff;
             box-shadow: 0 0 10px rgba(255, 62, 62, 0.3);
         }
+        /* Hamburger toggle — hidden on desktop */
+        .nav-toggle-input { display: none; }
+        .nav-toggle-label { display: none; }
+
         @media (max-width: 700px) {
-            .nav-inner { flex-direction: column; align-items: flex-start; }
-            .nav-brand { margin-bottom: 8px; }
-            .nav-links { gap: 4px; }
-            .nav-links a { font-size: 11px; padding: 5px 10px; }
+            .nav-inner {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+                align-items: center;
+                padding: 12px 16px;
+                gap: 0;
+            }
+            .nav-brand { grid-column: 1; grid-row: 1; margin-right: 0; font-size: 17px; }
+            .nav-toggle-label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                grid-column: 2;
+                grid-row: 1;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .nav-toggle-label span,
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: #00ccff;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                content: '';
+                position: absolute;
+                left: 0;
+            }
+            .nav-toggle-label span::before { top: -7px; }
+            .nav-toggle-label span::after { top: 7px; }
+            /* Animate to X when open */
+            .nav-toggle-input:checked + .nav-toggle-label span { background: transparent; }
+            .nav-toggle-input:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); }
+            .nav-toggle-input:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
+            /* Links: hidden by default, slide open */
+            .nav-links {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease, padding 0.35s ease;
+                padding: 0;
+            }
+            .nav-toggle-input:checked ~ .nav-links {
+                max-height: 500px;
+                padding: 12px 0 4px 0;
+            }
+            .nav-links a {
+                font-size: 14px;
+                padding: 10px 14px;
+                border-radius: 6px;
+                text-align: left;
+            }
         }
 
         /* Section 08 Tapeout styles */
@@ -298,11 +362,7 @@
             /* Footer */
             .footer { font-size: 14px !important; line-height: 1.8; }
 
-            /* Nav: horizontal scroll, no wrap mess */
-            .nav-inner { padding: 10px 16px; flex-wrap: nowrap; gap: 12px; }
-            .nav-brand { font-size: 16px; letter-spacing: 2px; margin-right: 12px; flex-shrink: 0; }
-            .nav-links { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 6px; padding-bottom: 2px; }
-            .nav-links a { font-size: 11px; padding: 6px 10px; flex-shrink: 0; }
+            /* Nav handled by hamburger at 700px */
 
             /* Kill blink on mobile — distracting on small screen */
             .blink { animation: none; }
@@ -315,7 +375,6 @@
             .metrics-grid { grid-template-columns: 1fr; gap: 14px; }
             .metric-value { font-size: 32px !important; }
             .tp-pipeline { grid-template-columns: 1fr; }
-            .nav-brand { font-size: 15px; }
         }
     </style>
 
@@ -385,6 +444,8 @@
 <nav class="nav-bar">
     <div class="nav-inner">
         <a href="#" class="nav-brand">MILKYWAY CENTER</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
         <div class="nav-links">
             <a href="#tapeout" class="nav-active">08 TAPEOUT</a>
             <a href="#hw-validation">07 VALIDATION</a>
