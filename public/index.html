@@ -133,6 +133,7 @@
         .nav-inner {
             max-width: 940px;
             margin: 0 auto;
+            position: relative;
         }
         .nav-brand {
             color: #fff;
@@ -225,19 +226,26 @@
         .nav-toggle-input:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); }
         .nav-toggle-input:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); }
         .nav-links {
-            grid-column: 1 / -1;
-            grid-row: 2;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.35s ease, padding 0.35s ease;
-            padding: 0;
+            padding: 0 20px;
+            background: linear-gradient(180deg, rgba(12, 18, 45, 0.98) 0%, rgba(8, 12, 35, 0.97) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #00ccff44;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 999;
         }
         .nav-toggle-input:checked ~ .nav-links {
             max-height: 500px;
-            padding: 12px 0 4px 0;
+            padding: 14px 20px;
         }
 
         /* Section 08 Tapeout styles */
