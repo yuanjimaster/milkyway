@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2025-06-18/server-card.json",
   "serverInfo": {
     "name": "milkyway-center-v131",
-    "version": "1.0.0",
-    "title": "Milkyway Center — V131 Topological Photonic Cipher",
-    "description": "Hardware-validated dual-layer photonic cipher: 1.4ns deterministic encryption, 99.75% perfect frame rate, 0/40 anti-spoofing rejection on real 30m fiber. FPGA-native physical-layer security for HFT and critical infrastructure.",
+    "version": "2.0.0",
+    "title": "Milkyway Center — V131 Silicon Photonic Chip & Photonic Cipher",
+    "description": "V131 silicon photonic chip: topological manifold processor on SOI with 2^363 crystal manifold, 80ch DWDM, ~120 PFLOPS projected. Hardware-validated 1.4ns photonic cipher with 0/40 anti-spoofing on real 30m fiber. 3/3 tapeout PASS, 9/9 cipher tests PASS.",
     "contact": {
       "email": "yuanjimaster@gmail.com"
     }
@@ -15,15 +15,21 @@
   "resources": [
     {
       "uri": "https://milkyway.center/",
-      "name": "V131 Hardware Validation Report",
-      "description": "Full hardware validation report: 9/9 tests passed, dual-layer cipher architecture, anti-spoofing results, HFT infrastructure relevance.",
+      "name": "V131 Silicon Photonic Chip — Full Report",
+      "description": "Complete report: silicon photonic chip tapeout (topological manifold processor, DWDM, specs, NVIDIA B200 comparison) and hardware validation (9/9 tests, cipher architecture, anti-spoofing, HFT relevance).",
       "mimeType": "text/html"
     },
     {
       "uri": "https://milkyway.center/index.md",
-      "name": "V131 Hardware Validation Report (Markdown)",
-      "description": "Machine-readable markdown version of the V131 hardware validation report.",
+      "name": "V131 Full Report (Markdown)",
+      "description": "Machine-readable markdown version of the full V131 silicon photonic chip and cipher report.",
       "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://milkyway.center/llms.txt",
+      "name": "V131 LLM Summary",
+      "description": "LLM-optimized summary covering silicon photonic chip tapeout specs, hardware validation results, and licensing.",
+      "mimeType": "text/plain"
     }
   ]
 }

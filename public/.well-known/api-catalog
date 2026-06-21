@@ -6,7 +6,17 @@
         {
           "href": "https://milkyway.center/",
           "type": "text/html",
-          "title": "V131 Topological Photonic Cipher — Hardware Validation Report"
+          "title": "V131 Silicon Photonic Chip — Topological Manifold Processor & Photonic Cipher"
+        },
+        {
+          "href": "https://milkyway.center/index.md",
+          "type": "text/markdown",
+          "title": "V131 Full Report (Markdown)"
+        },
+        {
+          "href": "https://milkyway.center/llms.txt",
+          "type": "text/plain",
+          "title": "V131 LLM Summary"
         }
       ],
       "describedby": [
@@ -19,6 +29,11 @@
           "href": "https://milkyway.center/.well-known/agent-skills/index.json",
           "type": "application/json",
           "title": "Agent Skills Discovery Index"
+        },
+        {
+          "href": "https://milkyway.center/.well-known/agent-card.json",
+          "type": "application/json",
+          "title": "A2A Agent Card"
         }
       ],
       "status": [

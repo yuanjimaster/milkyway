@@ -7,9 +7,15 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://milkyway.center/index.md</loc>
+        <lastmod>2026-06-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://milkyway.center/llms.txt</loc>
-        <lastmod>2026-06-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <lastmod>2026-06-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

@@ -1,12 +1,12 @@
 {
-  "name": "Milkyway Center — V131 Topological Photonic Cipher",
-  "description": "Hardware-validated dual-layer photonic cipher achieving 1.4ns deterministic encryption latency, 99.75% perfect frame rate, and 0/40 anti-spoofing rejection. FPGA-native physical-layer security for HFT and critical infrastructure.",
-  "url": "https://www.milkyway.center",
+  "name": "Milkyway Center — V131 Silicon Photonic Chip",
+  "description": "V131 silicon photonic chip: topological manifold processor on SOI with 2^363 crystal manifold, 80-channel DWDM, ~120 PFLOPS projected. Plus hardware-validated 1.4ns deterministic photonic cipher with 0/40 anti-spoofing. BER=0, 3/3 tapeout PASS, 9/9 cipher tests PASS.",
+  "url": "https://milkyway.center",
   "provider": {
     "organization": "Milkyway Center",
-    "url": "https://www.milkyway.center"
+    "url": "https://milkyway.center"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "capabilities": {
     "streaming": false,
     "pushNotifications": false
@@ -18,7 +18,7 @@
   "supportedInterfaces": [
     {
       "protocol": "https",
-      "url": "https://www.milkyway.center/",
+      "url": "https://milkyway.center/",
       "contentTypes": ["text/html", "text/markdown"]
     }
   ],
@@ -26,17 +26,24 @@
   "defaultOutputModes": ["text/html", "text/markdown"],
   "skills": [
     {
+      "id": "silicon-photonic-tapeout",
+      "name": "V131 Silicon Photonic Chip Tapeout",
+      "description": "Topological manifold processor on SOI: 2^363 crystal manifold, 80ch C-band DWDM, TiN thermo-optic phase shifters, FPGA real-time decode, BER=0 verified, 3/3 tapeout sign-off PASS. ~120 PFLOPS projected at 50 GBaud, ~12,000 TOPS/W efficiency.",
+      "tags": ["V131", "silicon photonics", "tapeout", "SOI", "DWDM", "topological manifold", "crystal manifold", "photonic chip", "optical computing", "FPGA", "thermo-optic phase shifter"],
+      "examples": ["What is the V131 silicon photonic chip?", "How does V131 compare to NVIDIA B200?", "What is a topological manifold processor?", "What are V131 tapeout specs?"]
+    },
+    {
       "id": "hardware-validation",
-      "name": "V131 Hardware Validation Report",
-      "description": "Full hardware validation results: 9/9 tests passed, dual-layer cipher architecture, anti-spoofing results, core metrics",
-      "tags": ["V131", "FPGA", "encryption", "hardware", "validation"],
-      "examples": ["What is V131?", "What encryption latency does V131 achieve?", "How does anti-spoofing work?"]
+      "name": "V131 Hardware Validation — Photonic Cipher",
+      "description": "9/9 hardware tests passed on real 30m fiber: dual-layer photonic cipher with 1.4ns deterministic encryption, 99.75% perfect frame rate, 0/40 anti-spoofing, AES-256-CTR NIST compliant. FPGA-native physical-layer security for HFT and critical infrastructure.",
+      "tags": ["V131", "FPGA", "encryption", "hardware", "validation", "photonic cipher", "anti-spoofing", "HFT", "AES-256-CTR", "physical layer security"],
+      "examples": ["What encryption latency does V131 achieve?", "How does anti-spoofing work?", "What are V131 hardware test results?"]
     },
     {
       "id": "licensing",
-      "name": "Protocol Licensing",
-      "description": "Licensing information for V131 technology: strategic, industrial, and research tiers",
-      "tags": ["licensing", "commercial", "academic"],
+      "name": "V131 Protocol Licensing",
+      "description": "Licensing information for V131 silicon photonic chip and cipher technology: strategic (institutional), industrial (commercial), and research (academic) tiers.",
+      "tags": ["licensing", "commercial", "academic", "strategic"],
       "examples": ["How do I license V131?", "What licensing tiers are available?"]
     }
   ]
