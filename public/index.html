@@ -1324,5 +1324,12 @@
         });
     }
     </script>
+    <script>
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            document.getElementById('nav-toggle').checked = false;
+        });
+    });
+    </script>
 </body>
 </html>
